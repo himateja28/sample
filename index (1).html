@@ -129,7 +129,7 @@
         import { getFirestore, collection, addDoc, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
         // Firebase config
-     const firebaseConfig = {
+        const firebaseConfig = {
   apiKey: "AIzaSyCu8LsPMLvVE4m1j1DK8ZUbBjpi6PyOXX8",
   authDomain: "chatapp1-c5c3c.firebaseapp.com",
   projectId: "chatapp1-c5c3c",
@@ -170,7 +170,7 @@
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     const messageClass = data.userName === currentUser.displayName ? 'my-message' : 'other-message';
-                    messagesContainer.innerHTML += <div class="message ${messageClass}"><strong>${data.userName}</strong>: ${data.text}</div>;
+                    messagesContainer.innerHTML += `<div class="message ${messageClass}"><strong>${data.userName}</strong>: ${data.text}</div>`;
                 });
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             });
